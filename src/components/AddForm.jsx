@@ -1,9 +1,39 @@
-import React from 'react'
+import { useDispatch } from "react-redux";
+import { v4 } from "uuid";
+import { ActionTypes } from "../redux/actionTypes";
 
 const AddForm = () => {
-  return (
-    <div>AddForm</div>
-  )
-}
+  // dispatch kurulum
+  const dispatch = useDispatch();
 
-export default AddForm
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // todo objesi oluştur
+    const newTodo = {
+      id: v4(),
+      text: e.target[0].value,
+      isDone: false,
+      createdAt: new Date().toLocaleDateString(),
+    };
+
+    //Oluşturulan todo'yu store'a ekle
+    dispatch({
+      type: ActionTypes.ADD_TODO,
+      payload: newTodo,
+    });
+    e.target[0].value = "";
+  };
+  return (
+    <form onSubmit={handleSubmit} className="d-flex gap-1 my-5">
+      <input
+        placeholder="örn: typscript projesi yap"
+        className="form-control"
+        type="text"
+      />
+      <button className="btn btn-warning">Ekle</button>
+    </form>
+  );
+};
+
+export default AddForm;
