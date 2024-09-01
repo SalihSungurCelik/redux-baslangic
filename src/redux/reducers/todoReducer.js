@@ -18,7 +18,7 @@ const initialState = {
   category: [],
 };
 
-const { ADD_TODO, REMOVE_TODO, UPDATE_TODO } = ActionTypes;
+const { ADD_TODO, REMOVE_TODO, UPDATE_TODO, SET_TODOS } = ActionTypes;
 
 const todoReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -35,6 +35,8 @@ const todoReducer = (state = initialState, action) => {
         item.id === action.payload.id ? action.payload : item
       );
       return { ...state, todos: newTodos };
+    case SET_TODOS:
+      return { ...state, todos: action.payload };
     default:
       return state;
   }

@@ -1,0 +1,16 @@
+{
+  "todos": [
+    {
+      "id": "2a711033-1108-4ae3-b509-a108b2bea2a6",
+      "text": "typescript öğren",
+      "isDone": false,
+      "createdAt": "01.09.2024"
+    },
+    {
+      "id": "af22f95d-2621-47c6-9fa9-5423c4a9350d",
+      "text": "javascript projesi yap",
+      "isDone": false,
+      "createdAt": "01.09.2024"
+    }
+  ]
+}

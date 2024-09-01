@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { v4 } from "uuid";
-import { ActionTypes } from "../redux/actionTypes";
+import { addTodo } from "../redux/actions/todoActions";
 
 const AddForm = () => {
   // dispatch kurulum
@@ -18,10 +18,7 @@ const AddForm = () => {
     };
 
     //Oluşturulan todo'yu store'a ekle
-    dispatch({
-      type: ActionTypes.ADD_TODO,
-      payload: newTodo,
-    });
+    dispatch(addTodo(newTodo));
     e.target[0].value = "";
   };
   return (

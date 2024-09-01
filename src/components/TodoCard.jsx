@@ -2,16 +2,14 @@ import { useDispatch } from "react-redux";
 import Modal from "./Modal";
 import { useState } from "react";
 import ActionTypes from "../redux/actionTypes";
+import { removeTodo, updateTodo } from "../redux/actions/todoActions";
 
 const TodoCard = ({ todo }) => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   //store'dan todo'yu kaldır
   const handleDelete = () => {
-    dispatch({
-      type: ActionTypes.REMOVE_TODO,
-      payload: todo.id,
-    });
+    dispatch(removeTodo(todo.id));
   };
   //storedaki todonun isDoene değerini tersine çevir.
   const handleStatus = () => {
@@ -19,10 +17,7 @@ const TodoCard = ({ todo }) => {
     const updated = { ...todo, isDone: !todo.isDone };
 
     // store'daki eski todo'yu güncel todo ile değiştir.
-    dispatch({
-      type: ActionTypes.UPDATE_TODO,
-      payload: updated,
-    });
+    dispatch(updateTodo(updated));
   };
 
   return (
