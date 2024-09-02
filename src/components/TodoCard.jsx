@@ -3,21 +3,31 @@ import Modal from "./Modal";
 import { useState } from "react";
 import ActionTypes from "../redux/actionTypes";
 import { removeTodo, updateTodo } from "../redux/actions/todoActions";
+import axios from "axios";
 
 const TodoCard = ({ todo }) => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   //store'dan todo'yu kaldır
   const handleDelete = () => {
-    dispatch(removeTodo(todo.id));
+    // API'a silme isteği at
+    axios
+      .delete(`/todos/${todo.id}`)
+      .then(() => dispatch(removeTodo(todo.id)))
+      .catch(() => alert("Silme İşleminde bir sorun oluştu!"));
+
+    // store'dan sil > arayüzü günceller
   };
   //storedaki todonun isDoene değerini tersine çevir.
   const handleStatus = () => {
     //isDone değerini tersine çevir.
     const updated = { ...todo, isDone: !todo.isDone };
 
+    axios
+      .put(`/todos/${todo.id}`, updated)
+      .then(() => dispatch(updateTodo(updated)));
+
     // store'daki eski todo'yu güncel todo ile değiştir.
-    dispatch(updateTodo(updated));
   };
 
   return (

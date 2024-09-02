@@ -1,16 +1,75 @@
 {
   "todos": [
     {
-      "id": "2a711033-1108-4ae3-b509-a108b2bea2a6",
-      "text": "typescript öğren",
+      "id": "af22f95d-2621-47c6-9fa9-5423c4a9350d1",
+      "text": "javascript p2si yap",
+      "isDone": true
+    },
+    {
+      "id": "af22f95d-2621-47c6-9fa9-5423c4a9350d2",
+      "text": "javascript p3esi yap",
+      "isDone": true,
+      "createdAt": "01.09.2024"
+    },
+    {
+      "id": "af22f95d-2621-47c6-9fa9-5423c4a9350d3",
+      "text": "javascript pr4esi yap",
       "isDone": false,
       "createdAt": "01.09.2024"
     },
     {
-      "id": "af22f95d-2621-47c6-9fa9-5423c4a9350d",
-      "text": "javascript projesi yap",
+      "id": "af22f95d-2621-47c6-9fa9-5423c4a9350d4",
+      "text": "javascript p5jesi yap",
       "isDone": false,
       "createdAt": "01.09.2024"
+    },
+    {
+      "id": "af22f95d-2621-47c6-9fa9-5423c4a9350d5",
+      "text": "javascript pr6jesi yap",
+      "isDone": true,
+      "createdAt": "01.09.2024"
+    },
+    {
+      "id": "af22f95d-2621-47c6-9fa9-5423c4a9350d6",
+      "text": "javascript pro7i yap",
+      "isDone": false,
+      "createdAt": "01.09.2024"
+    },
+    {
+      "id": "af22f95d-2621-47c6-9fa9-5423c4a9350d7",
+      "text": "javascript pr8esi yap",
+      "isDone": false,
+      "createdAt": "01.09.2024"
+    },
+    {
+      "id": "af22f95d-2621-47c6-9fa9-5423c4a9350d8",
+      "text": "javascript pr9si yap",
+      "isDone": false,
+      "createdAt": "01.09.2024"
+    },
+    {
+      "id": "af22f95d-2621-47c6-9fa9-5423c4a9350d9",
+      "text": "javascript pr10si yap",
+      "isDone": false,
+      "createdAt": "01.09.2024"
+    },
+    {
+      "id": "9f818ca4-b127-4dad-92ab-1d81118eca2d",
+      "text": "deneme",
+      "isDone": false,
+      "createdAt": "02.09.2024"
+    },
+    {
+      "id": "3c7182bb-e114-4732-8427-6d5635c89e4e",
+      "text": "hj",
+      "isDone": false,
+      "createdAt": "02.09.2024"
+    },
+    {
+      "id": "6fb95d74-67e0-4d7f-a713-34aa0397d6ff",
+      "text": "ghj",
+      "isDone": false,
+      "createdAt": "02.09.2024"
     }
   ]
 }

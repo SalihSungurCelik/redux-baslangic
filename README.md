@@ -51,3 +51,9 @@
 - reducer/reducer'ların kurulumunu yap
 - store kurulumunu yap.
 - store'u projeye tanıt.
+
+# Altın Kural
+
+- Verilerin API'dan geldiği senaryoda api istekleri başarılı olmadan store'u güncellememeliyiz.
+- Ancak API isteği başarılı olduktan sonra store güncellenmeli.
+- Yani store'un güncellenmesi API isteğinin sonucuna bağımlı olmalı.

@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { v4 } from "uuid";
 import { addTodo } from "../redux/actions/todoActions";
+import axios from "axios";
 
 const AddForm = () => {
   // dispatch kurulum
@@ -17,8 +18,10 @@ const AddForm = () => {
       createdAt: new Date().toLocaleDateString(),
     };
 
+    axios.post(`/todos`, newTodo).then(() => dispatch(addTodo(newTodo)));
+
     //Oluşturulan todo'yu store'a ekle
-    dispatch(addTodo(newTodo));
+
     e.target[0].value = "";
   };
   return (

@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { updateTodo } from "../redux/actions/todoActions";
+import axios from "axios";
 
 const Modal = ({ todo, close }) => {
   const dispatch = useDispatch();
@@ -9,8 +10,12 @@ const Modal = ({ todo, close }) => {
     const newText = e.target[1].value;
     // eski todo'nun bütün verilerini alıp inputtan aldığımız veri ile güncelleme
     const updated = { ...todo, text: newText };
+
+    axios
+      .put(`/todos/${todo.id}`, updated)
+      .then(() => dispatch(updateTodo(updated)));
     // store'u güncelle
-    dispatch(updateTodo(updated));
+
     //Modal kapat
     close();
   };
